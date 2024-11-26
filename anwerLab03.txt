@@ -1,0 +1,29 @@
+2.
+ Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of arguments for dvd. Compare to an array parameter. What do you prefer in this case?
+
+Ý nghĩa của DigitalVideoDisc... dvds
+... (ba dấu chấm) trong khai báo DigitalVideoDisc... dvds cho phép phương thức nhận bất kỳ số lượng đối tượng DigitalVideoDisc nào.
+Biến dvds trong phương thức này thực chất là một mảng, nhưng không cần phải tạo mảng thủ công khi gọi phương thức.
+Dễ sử dụng:  không cần phải tạo mảng một cách thủ công.
+Linh hoạt: Có thể truyền vào bất kỳ số lượng tham số nào (0 hoặc nhiều đối tượng).
+
+3.
+Question: Is JAVA a Pass by Value or a Pass by Reference programming language? 
+-> java is always a pass by value 
+●	After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+
+Java truyền tham số theo cơ chế pass-by-value. Điều này có nghĩa là khi gọi swap(jungleDVD, cinderellaDVD), bản sao của tham chiếu jungleDVD và cinderellaDVD được truyền vào phương thức.
+Bất kỳ thay đổi nào đối với o1 và o2 trong swap sẽ không ảnh hưởng đến các tham chiếu gốc jungleDVD và cinderellaDVD trong main.
+Khi gọi swap(jungleDVD, cinderellaDVD), phương thức này chỉ hoán đổi bản sao cục bộ của tham số o1 và o2. Giá trị gốc của jungleDVD và cinderellaDVD trong main vẫn giữ nguyên.
+
+
+●	After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
+
+Sau khi gọi changeTitle(jungleDVD, cinderellaDVD.getTitle()), tiêu đề của jungleDVD bị thay đổi vì:
+
+Java truyền tham chiếu đối tượng: Phương thức changeTitle nhận tham chiếu đến đối tượng jungleDVD, nên nó thao tác trực tiếp lên đối tượng này.
+
+Phương thức thay đổi trạng thái: Trong changeTitle, có khả năng gọi setTitle(newTitle), cập nhật thuộc tính title của jungleDVD bằng giá trị từ cinderellaDVD.getTitle().
+
+Vì vậy, tiêu đề của jungleDVD thay đổi thành "Cinderella".
+
